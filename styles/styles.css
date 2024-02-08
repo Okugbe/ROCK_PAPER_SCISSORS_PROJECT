@@ -1,0 +1,228 @@
+body {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: rgb(248, 248, 248);
+}
+
+.main-container {
+    display: flex;
+    justify-content:space-between;
+    height: 100vh;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.nav-sect {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 120px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px #14141460;
+}
+
+.nav-sect ul li {
+    text-decoration: none;
+}
+
+.menu-icons ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+    gap: 13px;
+}
+
+.main-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.hero-div h1 {
+    font-size: 3rem;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    font-weight: 700;
+    color: #141414;
+    margin: 0;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.content-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.game-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choice-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 200px;
+    width: 133px;
+    margin: 0 0.9px;
+    box-shadow: 0 1px 10px #1f1f1f27;
+    transform: skew(-13deg);
+
+}
+
+.choice-icon:hover {
+    cursor: pointer;
+    transform: scale(1.045);
+    transition: 1s;
+    background: #000000;
+    color: #fff;
+}
+
+.player-score-container,
+.computer-score-container {
+    background-color: #fff;
+    height: 77px;
+    width: auto;
+    padding: 5px 10px;
+    margin: 0 0.9px;
+    box-shadow: 0 1px 10px #1f1f1f27;
+    transform: skew(-13deg);
+    word-wrap: break-word;
+    white-space: normal;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.player-score-container {
+    margin-right: 3.6px;
+}
+
+.computer-score-container {
+    margin-left: 3.6px;
+}
+
+.player-name,
+.computer-name {
+    font-size: 1.125em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.player-score,
+.computer-score {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+span.player-score,
+span.computer-score {
+    font-style: italic;
+    font-size: 26px;
+    font-weight: bold
+}
+
+
+.footer-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 1px 5px #14141460;
+}
+
+.input-sect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.input-name-div, 
+.input-round-div {
+    position: relative;
+    width: 150px;
+    height: 28px;
+    /* border: 2px solid #000; */
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 10px #1f1f1f27;
+}
+
+.input-name-div input, 
+.input-round-div input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+/* .input-sect {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+} */
+
+/* .input-name-div .cursor,
+.input-round-div .cursor {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: #000;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+
+/* .choice-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 200px;
+    width: 133px;
+    margin: 0 0.9px;
+    box-shadow: 0 1px 10px #1f1f1f27;
+    transform: skew(-10deg);
+} */
+
