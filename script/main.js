@@ -16,14 +16,19 @@ let rounds = 0;
 let playerScore = 0;
 let computerScore = 0;
 
-
-document.querySelector('.input-round-div input').addEventListener('click', function () {
+// Start the game when the input button is clicked
+document.querySelector('.chevron-btn-wrapper').addEventListener('click', function () {
     // Get player name and rounds from inputs
-    playerName = playerNameInput.value;
+    playerName = playerNameInput.value.charAt(0).toUpperCase() + playerNameInput.value.slice(1);
+    
     rounds = parseInt(roundsInput.value);
 
+    // Check if rounds is an odd number
+    if (!isNaN(rounds) && rounds % 2 === 0) {
+        return alert('Rounds must be an odd number');
+    }
     // Check if inputs are valid
-    if (playerName && !isNaN(rounds) && rounds > 0) {
+    else if (playerName && !isNaN(rounds) && rounds > 0) {
         // alert(`Hello, ${playerName}! Let's start the game!`);
         gameContainer.style.display = 'flex';
         heroMention.textContent = `Welcome ${playerName}`
@@ -99,18 +104,18 @@ function playGame(playerChoice) {
 }
 
 // Start the game when the input button is clicked
-document.querySelector('.input-round-div input').addEventListener('click', function () {
-    // Get player name and rounds from inputs
-    playerName = playerNameInput.value;
-    rounds = parseInt(roundsInput.value);
+// document.querySelector('.input-round-div input').addEventListener('click', function () {
+//     // Get player name and rounds from inputs
+//     playerName = playerNameInput.value;
+//     rounds = parseInt(roundsInput.value);
 
-    // Check if inputs are valid
-    if (playerName && !isNaN(rounds) && rounds > 0) {
-        // alert(`Hello, ${playerName}! Let's start the game!`);
-        gameContainer.style.display = 'flex';
-        return heroMention.textContent = `Welcome ${playerName}`
+//     // Check if inputs are valid
+//     if (playerName && !isNaN(rounds) && rounds > 0) {
+//         // alert(`Hello, ${playerName}! Let's start the game!`);
+//         gameContainer.style.display = 'flex';
+//         return heroMention.textContent = `Welcome ${playerName}`
 
-    } else {
-        alert('Please enter valid values for Name and Rounds.');
-    }
-});
+//     } else {
+//         alert('Please enter valid values for Name and Rounds.');
+//     }
+// });

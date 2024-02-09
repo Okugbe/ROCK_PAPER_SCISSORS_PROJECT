@@ -181,7 +181,21 @@ span.computer-score {
     text-align: center;
 }
 
+.chevron-btn-wrapper {
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+    padding: 7px;
+    background-color: #fff;
+    box-shadow: 0 1px 10px #1f1f1f27;
+    font-size: 1.125em;
+    font-weight: 700;
+    font-style: italic;
+}
 
+.chevron-btn {
+    color: #0c0c0c27;
+}
 /* .input-sect {
     display: none;
     align-items: center;
