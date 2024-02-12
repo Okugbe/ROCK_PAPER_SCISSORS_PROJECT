@@ -16,11 +16,25 @@ let rounds = 0;
 let playerScore = 0;
 let computerScore = 0;
 
+
+function onRockButtonClick() {
+    playGame('rock');
+}
+
+function onPaperButtonClick() {
+    playGame('paper');
+}
+
+function onScissorsButtonClick() {
+    playGame('scissors');
+}
+
+
 // Start the game when the input button is clicked
-document.querySelector('.chevron-btn-wrapper').addEventListener('click', function () {
+document.querySelector('.chevron-btn-wrapper').addEventListener('click', function setUp() {
     // Get player name and rounds from inputs
     playerName = playerNameInput.value.charAt(0).toUpperCase() + playerNameInput.value.slice(1);
-    
+
     rounds = parseInt(roundsInput.value);
 
     // Check if rounds is an odd number
@@ -30,9 +44,16 @@ document.querySelector('.chevron-btn-wrapper').addEventListener('click', functio
     // Check if inputs are valid
     else if (playerName && !isNaN(rounds) && rounds > 0) {
         // alert(`Hello, ${playerName}! Let's start the game!`);
+        // Event listeners
+
+        rockButton.addEventListener('click', onRockButtonClick);
+        paperButton.addEventListener('click', onPaperButtonClick);
+        scissorsButton.addEventListener('click', onScissorsButtonClick);
+
         gameContainer.style.display = 'flex';
         heroMention.textContent = `Welcome ${playerName}`
         inputSection.style.display = 'none'
+
         
     } else {
         alert('Please enter valid values for Name and Rounds.');
@@ -40,10 +61,6 @@ document.querySelector('.chevron-btn-wrapper').addEventListener('click', functio
 });
 
 
-// Event listeners
-rockButton.addEventListener('click', () => playGame('rock'));
-paperButton.addEventListener('click', () => playGame('paper'));
-scissorsButton.addEventListener('click', () => playGame('scissors'));
 
 
 // Function to update scores
@@ -51,7 +68,7 @@ function updateScores() {
     const playerScoreElement = document.getElementById('player-score');
     const computerScoreElement = document.getElementById('computer-score');
     const playerNameElement = document.getElementById('player-name');
-    const computerNameElement = document.querySelector('.computer-name');   
+
 
     playerScoreElement.textContent = `${playerScore}`;
     computerScoreElement.textContent = `${computerScore}`;
@@ -59,6 +76,72 @@ function updateScores() {
     playerNameElement.textContent = playerName;
     computerNameElement.textContent = 'Comp.';
 }
+
+
+
+// Function to play the game
+function playGame(playerChoice) {
+    const choices = ['rock', 'paper', 'scissors'];
+    const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+    // // Determine the winner
+    // if (rounds === 0) {
+    //     return; // Disable playGame() when rounds is up
+    // }
+    if (playerChoice === computerChoice) {
+        // It's a tie
+        alert('It\'s a tie!');
+    } else if (
+        (playerChoice === 'rock' && computerChoice === 'scissors') ||
+        (playerChoice === 'paper' && computerChoice === 'rock') ||
+        (playerChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+        // Player wins
+        alert(`You win! ${playerChoice} beats ${computerChoice}`);
+        playerScore++;
+    } else {
+        // Computer wins
+        alert(`Computer wins! ${computerChoice} beats ${playerChoice}`);
+        computerScore++;
+    }
+
+    // Update scores
+    updateScores();
+
+    // Check if the game is over
+    if (--rounds === 0) {
+        alert('Game Over!');
+
+        if (playerScore > computerScore) {
+            contentHeader.textContent = `Congratulations ${playerName}! You won the game!`
+            return contentHeader.style.animation = 'bounce 1s ease-in-out infinite alternate';
+        } else if (playerScore < computerScore) {
+            contentHeader.textContent = `Computer won the game!`
+            return contentHeader.style.animation = 'fadeIn 2s ease-in-out infinite alternate';
+        } else {
+            return contentHeader.style.animation = 'fadeIn 2s ease-in forwards'; // Handle tie game
+        }
+    }
+
+}
+
+
+
+// Function to update scores
+function updateScores() {
+    const playerScoreElement = document.getElementById('player-score');
+    const computerScoreElement = document.getElementById('computer-score');
+    const playerNameElement = document.getElementById('player-name');
+    const computerNameElement = document.querySelector('.computer-name');
+
+    playerScoreElement.textContent = `${playerScore}`;
+    computerScoreElement.textContent = `${computerScore}`;
+
+    playerNameElement.textContent = playerName;
+    computerNameElement.textContent = 'Comp.';
+}
+
+
 
 // Function to play the game
 function playGame(playerChoice) {
@@ -89,7 +172,12 @@ function playGame(playerChoice) {
     // Check if the game is over
     if (--rounds === 0) {
         alert('Game Over!');
-        
+
+        // Disable buttons
+        rockButton.removeEventListener('click', onRockButtonClick);
+        paperButton.removeEventListener('click', onPaperButtonClick);
+        scissorsButton.removeEventListener('click', onScissorsButtonClick);
+
         if (playerScore > computerScore) {
             contentHeader.textContent = `Congratulations ${playerName}! You won the game!`
             return contentHeader.style.animation = 'bounce 1s ease-in-out infinite alternate';
@@ -102,20 +190,3 @@ function playGame(playerChoice) {
         }
     }
 }
-
-// Start the game when the input button is clicked
-// document.querySelector('.input-round-div input').addEventListener('click', function () {
-//     // Get player name and rounds from inputs
-//     playerName = playerNameInput.value;
-//     rounds = parseInt(roundsInput.value);
-
-//     // Check if inputs are valid
-//     if (playerName && !isNaN(rounds) && rounds > 0) {
-//         // alert(`Hello, ${playerName}! Let's start the game!`);
-//         gameContainer.style.display = 'flex';
-//         return heroMention.textContent = `Welcome ${playerName}`
-
-//     } else {
-//         alert('Please enter valid values for Name and Rounds.');
-//     }
-// });
