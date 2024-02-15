@@ -196,47 +196,91 @@ span.computer-score {
 .chevron-btn {
     color: #0c0c0c27;
 }
-/* .input-sect {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 18px;
-} */
 
-/* .input-name-div .cursor,
-.input-round-div .cursor {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    width: 2px;
-    height: 20px;
-    background-color: #000;
-    animation: blink 1s infinite;
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 0 20px;
+    }
+
+    .nav-sect {
+        padding: 0 20px;
+    }
+
+    .hero-div h1 {
+        font-size: 2.5rem;
+    }
+
+    .choice-icon {
+        height: 150px;
+        width: 100px;
+    }
+
+    .player-score-container,
+    .computer-score-container {
+        height: 60px;
+    }
+
+    .player-name,
+    .computer-name {
+        font-size: 1em;
+    }
+
+    .player-score,
+    .computer-score {
+        font-size: 20px;
+    }
+
+    .input-name-div, 
+    .input-round-div {
+        width: 100px;
+    }
 }
 
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-} */
 
-/* .choice-icon {
+.mini-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 22px;
+    /* margin-top: 18px; */
+    margin: 200px auto;
+    flex-direction: column;
     background-color: #fff;
-    height: 200px;
-    width: 133px;
-    margin: 0 0.9px;
+    height: auto;
+    width: 500px;
+    padding:  20px;
+    margin: 100px auto;
     box-shadow: 0 1px 10px #1f1f1f27;
-    transform: skew(-10deg);
-} */
+    border-radius: 5px;
+    padding-bottom: 77px;
+}
 
+.header {
+    border-bottom: 1px solid #525151;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.012em;
+    font-weight: 500;
+    font-style: bold;
+    padding: 10px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    gap: 10px;
+}
+
+.div-option {
+    box-shadow: 0 1px 10px #1f1f1f27;
+    border-radius: 25px;
+    padding: 7px 10px;
+}
+
+.div-option:hover {
+    border-bottom: 2px solid #6b6b6b;
+}   

@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,89 +13,22 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <script src="./script/main.js" defer></script>
 </head>
 
 <body>
-    <div class="main-container">
-        <!-- Header Section -->
-        <header class="header-sect">
-            <div class="header-div">
-                <!-- Navigation Section -->
-                <nav>
-                    <div class="nav-sect"><!-- Logo-section -->
-                        <div class="logo-container">
-                            <img src="logo.png" alt="Logo" class="logo">
-                        </div>
-                        <!-- Menu-section -->
-                        <div class="menu-icons">
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Rules</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+    <div class="index-sec">
+        <div class="mini-wrapper">
+            <div class="header">
+                <h1 class="main-header intro">Choose Game Mode</h1>
             </div>
-        </header>
-        <!-- Main-Section -->
-        <main class="main-sect">
-            <div class="main-div">
-                <!-- Hero-Section -->
-                <div class="hero-div">
-                    <h1 class="hero">Welcome to Rock Paper Scissors Contest</h1>
-                </div>
-                <!-- Content-Section -->
-                <div class="content-div" id="game-container">
-                    <!-- Comment-sect -->
-                    <div class="game-comment-header">
-                        <h2 class="content" id="content-header">Test your Choice</h2>
-                    </div>
-                    <!-- Game-sect -->
-                    <div class="game-section" id="game-choice">
-                        <div class="player-score-container" class="player-score-container">
-                            <div id="player-name" class="player-name"></div>
-                            <div class="player-score" id="player-score" >
-                            </div>
-                        </div>
-                        <div id="rock" class="choice-icon" title="rock">
-                            <p>Rock</p>
-                        </div>
-                        <div id="paper" class="choice-icon" title="Paper" type="button">
-                            <p>Paper</p>
-                        </div>
-                        <div id="scissors" class="choice-icon" title="Scissors">
-                            <p>Scissors</p>
-                        </div>
-                        <div class="computer-score-container" class="computer-score-container">
-                            <div id="other-player-name" class="other-player-name computer-name"></div>
-                            <div id="computer-score" class="computer-score"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Input section -->
-                <div class="input-sect">
-                    <div class="input-name-div">
-                        <input class="cursor" type="text" placeholder="Enter Name">
-                    </div>
-                    <div class="input-round-div">
-                        <input class="cursor" type="number" placeholder="Rounds" inputmode="numeric">
-                    </div>
-                    <div class="chevron-btn-wrapper" id="chevron-btn-wrapper">
-                        <div class="chevron-btn" id="chevron-btn">></div>
-                    </div>
-                </div>
+            <div class="div-option"><a href="./computer.html" title="Go to Computer versus mode">Player Vs Computer</a>
             </div>
-        </main>
-        <!-- Footer-Section -->
-        <footer class="footer-sect">
-            <div class="footer-div">
-                <p>&copy; 2024 Okus. All rights reserved.</p>
-            </div>
-        </footer>
+            <div class="div-option" title="Versus with a Friend"><a href="server/player.html">Player 1 Vs Player 2</a></div>
+            <div class="div-option" title="Play with anyone"><a href="server/player.html">Player 1 Vs Random Player</a></div>
+        </div>
+
     </div>
+
 </body>
 
 </html>
