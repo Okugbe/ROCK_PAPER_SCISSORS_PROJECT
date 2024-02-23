@@ -51,7 +51,6 @@ function playGame(playerChoice, computerChoice) {
 ## Demo
 
 ![Rock-Paper-Scissors Demo][demo]
-![Rock-Paper-Scissors Demo](/styles/images/Rock-Paper-Scissors_Gameplay.gif)
 
 ## Challenges and Learnings
 
@@ -63,5 +62,5 @@ Feel free to contribute and enjoy playing the Rock-Paper-Scissors Game! 🎮🌟
 
 ---
 
-[def]: ./styles/images/logo.png
-[demo]: /styles/images/Rock-Paper-Scissors_Gameplay.gif
+[def]: .\styles\images\logo.png
+[demo]: \styles\images\Rock-Paper-Scissors_Gameplay.gif
