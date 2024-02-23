@@ -51,6 +51,7 @@ function playGame(playerChoice, computerChoice) {
 ## Demo
 
 ![Rock-Paper-Scissors Demo][demo]
+![Rock-Paper-Scissors Demo](/styles/images/Rock-Paper-Scissors_Gameplay.gif)
 
 ## Challenges and Learnings
 
