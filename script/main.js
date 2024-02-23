@@ -33,7 +33,7 @@ function onScissorsButtonClick() {
 // Start the game when the input button is clicked
 document.querySelector('.chevron-btn-wrapper').addEventListener('click', function setUp() {
     // Get player name and rounds from inputs
-    playerName = playerNameInput.value.charAt(0).toUpperCase() + playerNameInput.value.slice(1);
+    playerName = playerNameInput.value.charAt(0).toUpperCase() + playerNameInput.value.slice(1).toLowerCase();
 
     rounds = parseInt(roundsInput.value);
 
@@ -85,23 +85,17 @@ function playGame(playerChoice) {
     const computerChoice = choices[Math.floor(Math.random() * 3)];
 
     // // Determine the winner
-    // if (rounds === 0) {
-    //     return; // Disable playGame() when rounds is up
-    // }
     if (playerChoice === computerChoice) {
-        // It's a tie
         alert('It\'s a tie!');
     } else if (
         (playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
         (playerChoice === 'scissors' && computerChoice === 'paper')
     ) {
-        // Player wins
-        alert(`You win! ${playerChoice} beats ${computerChoice}`);
+        alert(`You win! ${playerChoice} beats ${computerChoice}`); // Player wins
         playerScore++;
     } else {
-        // Computer wins
-        alert(`Computer wins! ${computerChoice} beats ${playerChoice}`);
+        alert(`Computer wins! ${computerChoice} beats ${playerChoice}`); // Computer wins 
         computerScore++;
     }
 
